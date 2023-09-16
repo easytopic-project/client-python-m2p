@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='client_python_m2p',
-    version='1.0.0',
+    version='1.0.1',
     url='https://github.com/easytopic-project/client-python-m2p',
     license='MIT License',
     author='Bruno Jucá',
