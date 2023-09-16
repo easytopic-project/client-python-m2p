@@ -31,12 +31,12 @@ class M2P:
             time.sleep(self.RECONNECT_TIMEOUT)
             return self.__getConnection(self.queue_host, self.host_port, self.specs)
 
-    def callback(self, ch, method, properties, body, user_callback, id):
+    def callback(self, ch, method, properties, body):
         print("Running python test", flush=True)
 
         msg = json.loads(body)
 
-        msg = user_callback(msg)
+        msg = self.user_callback(msg)
 
         ch.basic_publish(exchange="", routing_key=id + "-out", body=json.dumps(msg))
 
