@@ -38,7 +38,7 @@ class M2P:
 
         msg = self.user_callback(msg)
 
-        ch.basic_publish(exchange="", routing_key=id + "-out", body=json.dumps(msg))
+        ch.basic_publish(exchange="", routing_key=self.specs["id"] + "-out", body=json.dumps(msg))
 
         print("Results sent.", flush=True)
 
